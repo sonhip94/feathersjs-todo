@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 5051,
+  "public": "../public/",
+  "paginate": {
+    "default": 50,
+    "max": 50
+  },
+  "mongodb": "mongodb://hoplb:hophop01@ds157624.mlab.com:57624/todo-api-hoplb",
+  "authentication": {
+    "secret": "269aa9e1239827327b2d8a32401ca5e520807fdf5dce723471606235f93bc8c618a497b8db7c99058bdb33f635f7e7f7d2a21a51417c8d4fc213211106e5c3a02dfec4f75439899bbd4fb114465da97f6fea1ac6a86fc972b2b6fca6eb8fd5dd8f8ce33534e723f2ae6892ecc22b8436039a070335d157f2c701e0286a0fc9226e68266707743557f656913668a7d3de4f3c51eab3ea5758948ca71b8ee67d272e2782362c19ace22be8f0a46c1913fc443213997ca5e1e8d769e1e436c06f760c8cbc809a0050d9d46f72809703e8eefbc8c2b8d4ee182c02b4318b146ec49816e5e393d1a20e1765fd659f6fed1bb3795ea04072f138eaed3485eaab8eb062",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
